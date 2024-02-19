@@ -7,5 +7,5 @@ public class Item : ScriptableObject
 {
     public string ItemName;
     public Sprite sprite;
-    public float ItemCost;
+    public int ItemCost;
 }

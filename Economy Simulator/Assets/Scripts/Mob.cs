@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Object/Mob")]
@@ -9,8 +11,35 @@ public class Mob : ScriptableObject
     public string Name;
     public Sprite sprite;
     public float Health;
+
+    public bool IsAggressive;
+    
     public float Damage;
+    public float AttackRange;
+    public float AttackSpeed;
+
     public List<DropTable<Item, float, Vector2Int>> DropsWithWeights;
+}
+
+[CustomEditor(typeof(Mob))]
+public class MobEditor : Editor
+{
+    private Mob targetMob;
+
+    private void OnEnable()
+    {
+        targetMob = target as Mob;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        if (targetMob.IsAggressive)
+        {
+            
+        }
+    }
 }
 
 [Serializable]
