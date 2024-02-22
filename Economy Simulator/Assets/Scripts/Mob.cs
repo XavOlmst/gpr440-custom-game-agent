@@ -11,7 +11,9 @@ public class Mob : ScriptableObject
     public string Name;
     public Sprite sprite;
     public float Health;
+    public float MoveSpeed;
 
+    public float DetectionRange;
     public bool IsAggressive;
     
     public float Damage;

@@ -15,6 +15,8 @@ MonoBehaviour:
   Name: Coow
   sprite: {fileID: 21300000, guid: f400e17feff7f6348b21159b8006f53c, type: 3}
   Health: 7
+  MoveSpeed: 1
+  DetectionRange: 3
   IsAggressive: 1
   Damage: 0.75
   AttackRange: 1.3
