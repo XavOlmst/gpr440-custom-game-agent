@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     
     private void Start()
     {
-        _spawnTimer = Random.Range(spawnDelayRange.x, spawnDelayRange.y);
+        _spawnTimer = Random.Range(spawnDelayRange.x, Mathf.Max(spawnDelayRange.y / 2, spawnDelayRange.x));
     }
 
     void Update()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ using UnityEngine.Serialization;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private PlayerInventory inventory;
+    [SerializeField] private TMP_Text healthText;
     [SerializeField] private Item healingPotion;
     [SerializeField] private float maxHealth = 15f;
     [SerializeField] private float healingValue;
@@ -27,10 +29,7 @@ public class PlayerHealth : MonoBehaviour
             Heal();
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            TakeDamage(2.0f);
-        }
+        healthText.text = $"HP: {health}";
     }
 
     private void Heal()

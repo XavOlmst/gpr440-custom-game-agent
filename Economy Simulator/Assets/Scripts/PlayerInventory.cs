@@ -1,11 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private List<Item> inventory = new();   
+    [SerializeField] private TMP_Text currencyText;
     [SerializeField] private int currentCurrency;
+    private List<Item> inventory = new();
+
+    private void Update()
+    {
+        currencyText.text = $"$$: {currentCurrency}";
+    }
 
     public List<Item> GetInventory() => inventory;
     
